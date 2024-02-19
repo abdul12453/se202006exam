@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <title>Abdul Karim - Profile</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+         :root {
+            --accent-color: #3979a3;
+            --background-color: #14141a;
+            --background-color-2: #1f0d5f;
+            --light-grey: rgb(148, 141, 141);
+            --border-radius: 30px;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 10px;
+        }
+        
+        .content:hover::-webkit-scrollbar-thumb {
+            background: var(--light-grey);
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+        }
+        
+        #navbar {
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        html {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            background-color: var(--background-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+        
+        p {
+            line-height: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+        
+        h1 {
+            line-height: 4rem;
+        }
+        
+        h2 {
+            line-height: 2rem;
+            font-weight: normal;
+        }
+        
+        h4 {
+            text-align: center;
+        }
+        
+        .col-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+            background: #fff;
+            width: 70px;
+            margin-left: 20px;
+            border-radius: 35px;
+            padding: 15px 0;
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+            border: 2px solid #1f0d5f;
+        }
+        
+        .menu-icon {
+            font-size: 2rem;
+            color: var(--light-grey);
+            margin: 15px;
+        }
+        
+        .menu-icon:hover {
+            color: var(--accent-color);
+        }
+        
+        .portfolio {
+            display: flex;
+            background: var(--background-color-2);
+            height: 80vh;
+            width: 85vw;
+            max-width: 1200px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            height: 100%;
+            border-radius: var(--border-radius);
+            color: white;
+            overflow: auto;
+        }
+        
+        .header-img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin: 10px;
+            margin-top: 100px;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .header h2 {
+            font-size: 1rem;
+        }
+        
+        .socials {
+            margin: 20px;
+        }
+        
+        .socials a {
+            color: white;
+            margin: 0 10px;
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+        }
+        
+        .socials a:hover {
+            color: var(--accent-color);
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+        }
+        
+        .header .cta {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.274);
+            padding: 10px 20px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header .cta:hover {
+            color: var(--accent-color);
+            background-color: #fff;
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+        }
+        
+        .content {
+            border-radius: var(--border-radius);
+            background: white;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            scroll-behavior: smooth;
+            border: 2px solid #1f0d5f;
+        }
+        
+        .content-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            margin: 0 50px;
+        }
+        
+        .home h1 {
+            font-size: 3.5rem;
+            font-weight: bolder;
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .about {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .about-item {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+        
+        .language {
+            margin-bottom: 15px;
+        }
+        
+        .language p {
+            margin: 0;
+        }
+        
+        .bar {
+            background: rgba(0, 0, 0, 0.1);
+            display: block;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .bar span {
+            height: 8px;
+            float: left;
+            background: var(--accent-color);
+        }
+        
+        .polish {
+            width: 100%;
+        }
+        
+        .english {
+            width: 75%;
+        }
+        
+        .french {
+            width: 50%;
+        }
+        
+        .skill {
+            background-color: var(--accent-color);
+            color: #fff;
+            line-height: 35px;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        
+        .project-list {
+            margin: 20px 0;
+        }
+        
+        .project-tile {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            background: var(--light-grey);
+            color: transparent;
+            width: 100%;
+            height: 200px;
+            margin: auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-tile img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: contrast(70%) brightness(110%) grayscale(20%);
+        }
+        
+        .overlay {
+            background: #b6b0b2e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            width: 0%;
+            height: 100%;
+            color: rgb(0, 0, 0);
+            z-index: 2;
+            transition: 0.5s ease;
+        }
+        
+        .project-description {
+            line-height: normal;
+            max-width: 200px;
+            margin: 20px;
+            position: absolute;
+            left: -250px;
+            transition: 0.5s ease;
+        }
+        
+        .project-tile:hover .overlay {
+            width: 100%;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+        
+        .project-tile:hover .project-description {
+            left: 0;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            top: 55px;
+            height: calc(100% - 100px);
+            background-color: var(--accent-color);
+            z-index: 100;
+        }
+        
+        .timeline-date {
+            position: relative;
+        }
+        
+        .timeline-date::before {
+            content: "";
+            position: absolute;
+            background-color: var(--accent-color);
+            left: -25px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .timeline-items {
+            margin-left: 20px;
+        }
+        
+        .timeline-item {
+            margin: 50px 0;
+        }
+        
+        form {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .input-box {
+            display: flex;
+            align-items: center;
+        }
+        
+        .input-box input,
+        textarea {
+            width: 100%;
+            margin: 1rem;
+            color: black;
+            font-size: 1rem;
+            padding-left: 0.3rem;
+        }
+        
+        .input-box input::placeholder,
+        textarea::placeholder {
+            color: black;
+            font-size: 1rem;
+            padding-left: 0.3rem;
+        }
+        
+        .input-box textarea::placeholder {
+            padding-top: 0.3rem;
+        }
+        
+        .input-box input:focus,
+        textarea:focus {
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+        
+        .text-input {
+            height: 2rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: solid 2px var(--accent-color);
+        }
+        
+        textarea {
+            height: 4rem;
+            border: none;
+            border-bottom: solid 2px var(--accent-color);
+        }
+        
+        .submit-btn {
+            color: #14141a;
+            background-color: #fff;
+            padding: 10px 20px;
+            margin: 50px 0;
+            border-radius: 30px;
+            border: none;
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .submit-btn:hover {
+            color: #fff;
+            background-color: #1f0d5f;
+            transition: 0.2s linear;
+            transition-property: background-color, color;
+            cursor: pointer;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            html {
+                scroll-behavior: smooth;
+            }
+            .container {
+                height: auto;
+                flex-direction: column;
+            }
+            .portfolio {
+                flex-direction: column;
+                height: 100%;
+                margin: 30px 0 100px;
+            }
+            .content {
+                padding-bottom: 100px;
+            }
+            .header {
+                width: 100%;
+                height: 100%;
+            }
+            .content-card {
+                padding: 100px 0 0;
+            }
+            .menu {
+                flex-direction: row;
+                position: fixed;
+                bottom: 15px;
+                z-index: 1000;
+                width: auto;
+                height: fit-content;
+                border-radius: 50px;
+                margin: 0;
+            }
+            .menu-icon {
+                font-size: 2rem;
+                margin: 0 15px;
+            }
+            .home h1 {
+                font-size: 3rem;
+            }
+             ::-webkit-scrollbar {
+                width: 8px;
+            }
+             ::-webkit-scrollbar-track {
+                background: var(--background-color);
+            }
+             ::-webkit-scrollbar-thumb {
+                background: #fff;
+                border-radius: 10px;
+            }
+        }
+        
+        @media screen and (max-width: 750px) {
+            .col-2 {
+                grid-template-columns: 1fr;
+            }
+            .menu-icon {
+                font-size: 1.5rem;
+            }
+             ::-webkit-scrollbar {
+                display: none;
+            }
+            @media screen and (max-width: 400px) {
+                .content-card {
+                    margin: 0 30px;
+                }
+                .home h1 {
+                    font-size: 2rem;
+                    line-height: 2.5rem;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar">
+        <a href="#"></a>
+    </nav>
+    <div class="container">
+        <div class="menu">
+            <a href="#welcome-section" class="menu-icon fas fa-home"></a>
+            <a href="#about" class="menu-icon fas fa-user"></a>
+            <a href="#projects" class="menu-icon fas fa-code"></a>
+            <a href="#experience" class="menu-icon fas fa-briefcase"></a>
+            <a href="#contact" class="menu-icon fas fa-envelope"></a>
+        </div>
+        <div class="portfolio">
+            <section class="header">
+                <img class="header-img" src="../Images/5.jpeg" alt="" />
+                <h1>Abdul Karim</h1>
+                <h2>SQA Automation Engineer</h2>
+                <br>
+                <h4>Contact : 0301-0162244</h4>
+                <h4>abdul.karim@gmail.com</h4>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/abdul-karim-383ba2231" target="_blank" class="fab fa-linkedin-in" id="profile-link"></a>
+                    <a href="https://instagram.com/a.karim205?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100009979712023&mibextid=ZbWKwL" target="_blank" class="fab fa-facebook"></a>
+                </div>
+                <a href="../Document/Abdul.Karim Resume.pdf" download class="cta">Download Resume</a>
+            </section>
+            <div class="content">
+                <section class="content-card home" id="welcome-section">
+                    <h1>Hello, I am Abdul</h1>
+                    <h4>A passionate individual aspiring to become a Software Quality Assurance (SQA) Automation Engineer. Take a tour of my digital space to discover my professional journey, explore the projects I've worked on, and get a glimpse of the skills
+                        that power my passion for software engineering.</h4>
+                </section>
+                <section class="content-card about" id="about">
+                    <h1>About me</h1>
+                    <div class="about-item about-me">
+                        <p>
+                            Enthusiastic SQA Automation Engineer driven by a passion for elevating software testing standards. Proficient in cutting-edge tools like Selenium, Appium, and JUnit, I specialize in crafting and executing meticulous automated test scripts. My commitment
+                            to delivering top-tier quality is complemented by a collaborative and team-oriented approach.
+                        </p>
+                        <p>
+                            Throughout my career, I've honed my skills in identifying testing requirements, developing comprehensive test plans, and seamlessly integrating automated testing into the software development lifecycle. I bring a results-oriented mindset to root cause
+                            analysis, providing actionable insights to enhance software reliability and overall product performance.
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <div class="about-item skills">
+                            <h1>Skills</h1>
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">SASS</span>
+                            <span class="skill">Bootstrap</span>
+                            <span class="skill">Wordpress</span>
+                            <span class="skill">MySQL</span>
+                            <span class="skill">JAVA</span>
+                            <span class="skill">Linux</span>
+                            <span class="skill">Selenium</span>
+                            <span class="skill">JIRA</span>
+                            <span class="skill">Figma</span>
+                            <span class="skill">Agile/Waterfall</span>
+                        </div>
+                        <div class="about-item languages">
+                            <h1>Languages</h1>
+                            <div class="language">
+                                <p>Urdu</p>
+                                <span class="bar"><span class="polish"></span></span>
+                            </div>
+                            <div class="language">
+                                <p>English</p>
+                                <span class="bar"><span class="english"></span></span>
+                            </div>
+                            <div class="language">
+                                <p>Arabic</p>
+                                <span class="bar"><span class="french"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-card projects" id="projects">
+                    <h1>Projects</h1>
+                    <div class="col-2 project-list">
+                        <div class="project-tile">
+                            <img src="../Images/1.JPG" alt="" />
+                            <div class="overlay">
+                                <div class="project-description">
+                                    <h3>Agile Management</h3>
+                                    <p>
+                                        Applying agile and lean principles for adaptive management and change-driven processes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tile">
+                            <img src="../Images/2.JPG" alt="" />
+                            <div class="overlay">
+                                <div class="project-description">
+                                    <h3>Transaction Sys</h3>
+                                    <p>
+                                        optimizing online purchases, cashless payments. Embrace a change-driven approach for adaptability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tile">
+                            <img src="../Images/3.JPG" alt="" />
+                            <div class="overlay">
+                                <div class="project-description">
+                                    <h3>Stock Analysis</h3>
+                                    <p>
+                                        Animation of statistical and stock market data processing over spinning globe on grey background.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tile">
+                            <img src="../Images/4.JPG" alt="" />
+                            <div class="overlay">
+                                <div class="project-description">
+                                    <h3>Signed Model</h3>
+                                    <p>
+                                        Businessman standing in front of a chalkboard with web design terms and analytics written on it.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">see more...</a>
+                </section>
+                <section class="content-card experience" id="experience">
+                    <h1>Education Background</h1>
+                    <div class="timeline">
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <div class="timeline-date">till - 2017 &nbsp; (Secondary)</div>
+                                <br>
+                                <div class="timeline-content">
+                                    <h3>Excellence Academy Karachi</h3>
+                                    <p>
+                                        Embarking on the educational journey, I started my educational journey with a focus on <b>Biology</b> in school, fostering my curiosity for the natural world.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2018 - 2020 &nbsp; (Intermediate)</div>
+                                <br>
+                                <div class="timeline-content">
+                                    <h3>St. Patrick's College Karachi</h3>
+                                    <p>
+                                        Intermediate phase intensified challenges and honed my academic skills, I pursued <b>Pre-Engineering</b>, delving into mathematics and science.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2020 - 2024 &nbsp; (Undergraduate)</div>
+                                <br>
+                                <div class="timeline-content">
+                                    <h3>DHA Suffa University</h3>
+                                    <p>
+                                        at the university level, I specialized in <b>Software Engineering</b>, navigating complex systems and honing my skills in the tech domain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-card contact" id="contact">
+                    <h1>Contact</h1>
+                    <form class="form" id="form" action="#">
+                        <div class="input-box">
+                            <input type="text" class="text-input" name="name" placeholder="Name" />
+                        </div>
+                        <div class="input-box">
+                            <input type="email" class="text-input" name="email" id="email" placeholder="Email" />
+                        </div>
+                        <div class="input-box">
+                            <input type="subject" class="text-input" name="subject" id="subject" placeholder="Subject" />
+                        </div>
+                        <div class="input-box">
+                            <textarea name="text" class="message" placeholder="Message..."></textarea>
+                        </div>
+                        <div class="input-box">
+                            <input type="submit" class="submit-btn" id="submit" value="submit" />
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
